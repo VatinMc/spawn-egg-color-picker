@@ -24,7 +24,7 @@ function updateDecARGB(shell, isSwitch){
 		colorShellDec.innerText = shellValue;
 		colorDotsDec.innerText = dotsValue;
 	} else {
-			var color = rgb2int(getColor(shell));
+		var color = rgbHexToInt32(getColor(shell));
 		if(shell){
 			colorShellDec.innerText = color;
 		} else {
@@ -70,25 +70,9 @@ function getColor(shell){
 	return color;
 }
 
-function rgb2int(rgbHex){
+function rgbHexToInt32(rgbHex){
 	var hex = rgbHex.substr(1);
-	var hexARGB = 'ff' + hex;
-	var binARGB = hex2bin(hexARGB);
-	var binARGBflip = flipBits(binARGB);
-	var decARGB = parseInt(binARGBflip, 2) + 1;
-
-	return 0 - decARGB;
-}
-
-function hex2bin(hex){
-	return parseInt(hex,16).toString(2);
-}
-
-function flipBits(bin){
-	var flipbits = '';
-	for(let i = 0; i < bin.length; i++){
-		flipbits += bin[i] === '0' ? '1' : '0'
-	}
+	var hexARGB = '0xff' + hex;
 	
-	return flipbits;
+	return parseInt(hexARGB, 16)>>0;
 }

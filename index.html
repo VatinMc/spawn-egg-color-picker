@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en"> 
+	<head>
+		<title>Spawn Egg Color Picker</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="style.css">
+		<script src="script.js"></script>
+	</head>
+	<body>
+		<h1>Spawn Egg Color Picker</h1>
+		<div id="color-picker">
+			<div class="dec-argb-shell">
+				<p id="color-shell-dec">-3115964</p>
+			</div>
+			<div class="color-picker-element">
+				<label for="color-shell">Shell</label>
+				<input type="color" id="color-shell" onInput="updateColorShell()" value="#d07444">
+			</div>
+			<div class="color-picker-element">
+				<input type="button" id="color-switch" onClick="switchColors()" value="⇄">
+			</div>
+			<div class="color-picker-element">
+				<label for="color-dots">Dots</label>
+				<input type="color" id="color-dots" onInput="updateColorDots()" value="#ffc77c">
+			</div>
+			<div class="dec-argb-dots">
+				<p id="color-dots-dec">-14468</p>
+			</div>
+		</div>
+
+		<div id="spawn-egg">
+			<div id="spawn-egg-shell">
+				<img src="https://raw.githubusercontent.com/InventivetalentDev/minecraft-assets/1.21.4/assets/minecraft/textures/item/spawn_egg.png">
+			</div>
+			<div id="spawn-egg-dots">
+				<img src="https://raw.githubusercontent.com/InventivetalentDev/minecraft-assets/1.21.4/assets/minecraft/textures/item/spawn_egg_overlay.png">
+			</div>
+		</div>
+	</body>
+</html>
